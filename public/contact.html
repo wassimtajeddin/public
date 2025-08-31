@@ -7,14 +7,14 @@
   <link rel="stylesheet" href="style.css">
 
   <header>
-    <div >
+    <div class="header-container">
       <h1>Wassim Tajeddin</h1>
       <img src="Wassim.png" alt="Photo of Wassim Tajeddin" class="profile-pic">
       <nav>
         <a href="index.html">Home</a>
         <a href="cv.html">CV</a>
         <a href="projects.html">Projects</a>
-        <a href="contact.html" >Contact</a>
+        <a href="contact.html" class="active">Contact</a>
       </nav>
     </div>
   </header>
@@ -23,43 +23,40 @@
     <section id="contact">
       <h2>Contact Me</h2>
       
-      <div >
-        <div >
+      <div class="contact-container">
+        <div class="contact-info">
           <h3>Get in Touch</h3>
-          <div >
-            <i ></i>
+          <div class="contact-detail">
             <span>wassim.tajeddin@gmail.com</span>
           </div>
-          <div >
-            <i ></i>
+          <div class="contact-detail">
             <span>+46 736 842 961</span>
           </div>
-          <div >
-            <i ></i>
+          <div class="contact-detail">
             <span>Malmö, Sweden</span>
           </div>
-          <div >
-            <i ></i>
+          <div class="contact-detail">
+            <i class="fas fa-clock"></i>
             <span>Response within 24 hours</span>
           </div>
         </div>
         
-        <div >
+        <div class="contact-form">
           <h3>Send a Message</h3>
-          <form>
-            <div>
+          <form id="contactForm">
+            <div class="form-group">
               <label for="name">Your Name</label>
               <input type="text" id="name" required>
             </div>
-            <div>
+            <div class="form-group">
               <label for="email">Your Email</label>
               <input type="email" id="email" required>
             </div>
-            <div >
+            <div class="form-group">
               <label for="message">Your Message</label>
               <textarea id="message" required></textarea>
             </div>
-            <button type="submit" >Send Message</button>
+            <button type="submit" class="submit-btn">Send Message</button>
           </form>
         </div>
       </div>
@@ -67,9 +64,9 @@
   </main>
 
   <footer>
-    <div >
+    <div class="footer-content">
       <p>&copy; 2025 Wassim Tajeddin. All rights reserved.</p>
-      <div >
+      <div class="social-links">
         <a href="#"><i class="fab fa-linkedin"></i></a>
         <a href="#"><i class="fab fa-github"></i></a>
       </div>
