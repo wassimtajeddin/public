@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      alert(`Thank you for your message, ${name}! I will get back to you soon.`);
+      alert(`Unfortunately, the contact form is currently disabled. Please reach out to me via email at`);
       contactForm.reset();
     });
   }
