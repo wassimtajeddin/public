@@ -2,7 +2,7 @@
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
 
       const name = document.getElementById('name').value;
@@ -20,8 +20,24 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       
-      alert(`Unfortunately, the contact form is currently disabled. Please reach out to me via email`);
-      contactForm.reset();
+      try {
+        const response = await fetch('/api/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message })
+        });
+
+        const result = await response.json();
+        if (response.ok) {
+          alert(`Thank you for your message, ${name}! I will get back to you soon.`);
+          contactForm.reset();
+        } else {
+          alert(`Error: ${result.msg || 'Something went wrong'}`);
+        }
+      } catch (err) {
+        console.error('Request failed:', err);
+        alert('Failed to send message. Please try again later.');
+      }
     });
   }
 
