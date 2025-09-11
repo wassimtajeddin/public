@@ -2,9 +2,12 @@
 document.addEventListener('DOMContentLoaded', function() {
   const contactForm = document.getElementById('contactForm');
   if (contactForm) {
+    
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-
+      const apiUrl = window.location.hostname === 'localhost' 
+      ? '/api/contact' 
+      : 'https://wassimtajeddin-github-io.onrender.com/api/contact';
       const name = document.getElementById('name').value;
       const email = document.getElementById('email').value;
       const message = document.getElementById('message').value;
@@ -21,7 +24,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       
       try {
-        const response = await fetch('/api/contact', {
+        const response = await fetch(apiUrl, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ name, email, message })
