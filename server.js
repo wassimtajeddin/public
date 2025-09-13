@@ -47,7 +47,7 @@ app.post('/api/contact', (req, res) => {
       <p>${message}</p>
       <br>
       <p>Best regards,</p>
-      <p>Your Company Name</p>
+      <p>Wassim Tajeddin</p>
     </div>
   `;
 
@@ -81,22 +81,6 @@ app.post('/api/contact', (req, res) => {
       res.status(200).json({ msg: 'Message sent successfully' });
     });
   });
-});
-
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.get('/cv', (req, res) => {
-  res.sendFile(path.join(__dirname, 'cv.html'));
-});
-
-app.get('/projects', (req, res) => {
-  res.sendFile(path.join(__dirname, 'projects.html'));
-});
-
-app.get('/contact', (req, res) => {
-  res.sendFile(path.join(__dirname, 'contact.html'));
 });
 
 app.listen(PORT, () => {
