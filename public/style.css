@@ -753,6 +753,13 @@ footer::before {
   background: var(--accent-color);
 }
 
+@media (max-width: 992px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
 @media (max-width: 768px) {
   .header-container {
     padding: 1.2rem;
@@ -768,33 +775,7 @@ footer::before {
   }
 
   nav {
-    gap: 1rem;@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-::-webkit-scrollbar {
-  width: 10px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--primary-color);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--accent-dark);
-  border-radius: 5px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-color);
-}
+    gap: 1rem;
 
   }
 
@@ -833,14 +814,6 @@ footer::before {
   }
   
 }
-
-@media (max-width: 992px) {
-  .contact-container {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-}
-
 
 @media (max-width: 480px) {
   .header-container {
