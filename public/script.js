@@ -24,6 +24,11 @@ document.addEventListener('DOMContentLoaded', function() {
         email: document.getElementById("email").value,
         message: document.getElementById("message").value,
       })
+      emailjs.send("service_g58hffh", "template_ztsnci4", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      })
       .then(() => {
         formMessage.textContent = "Message sent successfully!";
         formMessage.classList.add("success");
