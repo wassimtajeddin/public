@@ -4,45 +4,47 @@ document.addEventListener('DOMContentLoaded', function() {
   const button = contactForm?.querySelector('.submit-btn');
   const messageBox = document.getElementById('formMessage');
 
-  (function(){
-    emailjs.init("NJcg3TmyxsiyUSVvo");
-  })();
+  if (contactForm) {
+    (function(){
+      emailjs.init("NJcg3TmyxsiyUSVvo");
+    })();
 
-  document.getElementById("contactForm").addEventListener("submit", function(e) {
-    e.preventDefault();
+    contactForm.addEventListener("submit", function(e) {
+      e.preventDefault();
 
-    const formMessage = document.getElementById("formMessage");
-    const originalText = button.textContent;
+      const formMessage = document.getElementById("formMessage");
+      const originalText = button.textContent;
 
-    button.disabled = true;
-    button.textContent = "Sending...";
-    formMessage.className = "message";
+      button.disabled = true;
+      button.textContent = "Sending...";
+      formMessage.className = "message";
 
-    emailjs.send("service_g58hffh", "template_olz0oie", {
-      name: document.getElementById("name").value,
-      email: document.getElementById("email").value,
-      message: document.getElementById("message").value,
-    })
-    .then(() => {
-      formMessage.textContent = "Message sent successfully!";
-      formMessage.classList.add("success");
-      document.getElementById("contactForm").reset();
-    })
-    .catch((error) => {
-      console.error("EmailJS Error:", error);
-      formMessage.textContent = "Failed to send message. Try again.";
-      formMessage.classList.add("error");
-    })
-    .finally(() => {
-      button.disabled = false;
-      button.textContent = originalText;
+      emailjs.send("service_g58hffh", "template_olz0oie", {
+        name: document.getElementById("name").value,
+        email: document.getElementById("email").value,
+        message: document.getElementById("message").value,
+      })
+      .then(() => {
+        formMessage.textContent = "Message sent successfully!";
+        formMessage.classList.add("success");
+        contactForm.reset();
+      })
+      .catch((error) => {
+        console.error("EmailJS Error:", error);
+        formMessage.textContent = "Failed to send message. Try again.";
+        formMessage.classList.add("error");
+      })
+      .finally(() => {
+        button.disabled = false;
+        button.textContent = originalText;
 
-      setTimeout(() => {
-        formMessage.textContent = '';
-        formMessage.className = 'message';
-      }, 5000);
+        setTimeout(() => {
+          formMessage.textContent = '';
+          formMessage.className = 'message';
+        }, 5000);
+      });
     });
-  });
+  }
 
  
   /* Backend handler (commented out) due to delay in response time on Render.com
