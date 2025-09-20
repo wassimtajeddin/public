@@ -4,7 +4,49 @@ document.addEventListener('DOMContentLoaded', function() {
   const button = contactForm?.querySelector('.submit-btn');
   const messageBox = document.getElementById('formMessage');
 
-  if (contactForm) {
+  (function(){
+    emailjs.init("NJcg3TmyxsiyUSVvo");
+  })();
+
+  document.getElementById("contactForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const formMessage = document.getElementById("formMessage");
+    const originalText = button.textContent;
+
+    button.disabled = true;
+    button.textContent = "Sending...";
+    formMessage.className = "message";
+
+    emailjs.send("service_g58hffh", "template_olz0oie", {
+      name: document.getElementById("name").value,
+      email: document.getElementById("email").value,
+      message: document.getElementById("message").value,
+    })
+    .then(() => {
+      formMessage.textContent = "Message sent successfully!";
+      formMessage.classList.add("success");
+      document.getElementById("contactForm").reset();
+    })
+    .catch((error) => {
+      console.error("EmailJS Error:", error);
+      formMessage.textContent = "Failed to send message. Try again.";
+      formMessage.classList.add("error");
+    })
+    .finally(() => {
+      button.disabled = false;
+      button.textContent = originalText;
+
+      setTimeout(() => {
+        formMessage.textContent = '';
+        formMessage.className = 'message';
+      }, 5000);
+    });
+  });
+
+ 
+  /* Backend handler (commented out) due to delay in response time on Render.com
+    if (contactForm) {
 
     contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
@@ -22,7 +64,7 @@ document.addEventListener('DOMContentLoaded', function() {
         message: contactForm.message.value.trim()
       };
 
-      if (!formData.name || !formData.email || !formData.message) {
+        if (!formData.name || !formData.email || !formData.message) {
         messageBox.textContent = 'Please fill in all fields.';
         messageBox.className = 'message error';
         button.disabled = false;
@@ -70,6 +112,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     });
   }
+  */
   const observerOptions = {
     root: null,
     rootMargin: '0px',
