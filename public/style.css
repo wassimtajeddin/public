@@ -313,16 +313,20 @@ section.visible {
 }
 
 .skill-item {
-  background: var(--secondary-color);
-  padding: 2.5rem 2rem;
-  border-radius: 15px;
-  text-align: center;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
-  border: 1px solid #333;
-  position: relative;
-  overflow: hidden;
-}
+            background: var(--secondary-color);
+            padding: 2.5rem 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+        }
+
+        [data-theme="light"] .skill-item {
+            border: 1px solid #e0e0e0;
+        }
 
 .skill-item::before {
   content: '';
@@ -371,18 +375,22 @@ section.visible {
 }
 
 .project-card {
-  background: var(--secondary-color);
-  padding: 2rem;
-  border-radius: 15px;
-  box-shadow: var(--card-shadow);
-  transition: var(--transition);
-  border: 1px solid #333;
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
+            background: var(--secondary-color);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: var(--transition);
+            border: 1px solid #333;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        [data-theme="light"] .project-card {
+            border: 1px solid #e0e0e0;
+        }
 
 .project-card::before {
   content: '';
@@ -488,27 +496,39 @@ section {
 
 
 .cv-section {
-  background: var(--secondary-color);
-  padding: 2.5rem;
-  border-radius: 15px;
-  margin-bottom: 2.5rem;
-  box-shadow: var(--card-shadow);
-  border: 1px solid #333;
-  transition: var(--transition);
-}
+            background: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        [data-theme="light"] .cv-section {
+            border: 1px solid #e0e0e0;
+        }
 
 .cv-section:hover {
-  box-shadow: var(--card-hover-shadow);
-  border-color: rgba(0, 212, 170, 0.2);
-}
+            box-shadow: var(--card-hover-shadow);
+            border-color: rgba(0, 212, 170, 0.2);
+        }
+
+        [data-theme="light"] .cv-section:hover {
+            border-color: rgba(0, 122, 99, 0.2);
+        }
 
 .cv-section h3 {
-  color: var(--accent-color);
-  margin-bottom: 1.5rem;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.8rem;
-  font-size: 1.5rem;
-}
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+            border-bottom: 1px solid #333;
+            padding-bottom: 0.8rem;
+            font-size: 1.5rem;
+        }
+
+        [data-theme="light"] .cv-section h3 {
+            border-bottom: 1px solid #e0e0e0;
+        }
 
 .cv-item {
   margin-bottom: 2rem;
@@ -551,13 +571,17 @@ section {
 }
 
 .contact-info {
-  background: var(--secondary-color);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: var(--card-shadow);
-  border: 1px solid #333;
-  transition: var(--transition);
-}
+            background: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        [data-theme="light"] .contact-info {
+            border: 1px solid #e0e0e0;
+        }
 
 .contact-info:hover {
   box-shadow: var(--card-hover-shadow);
@@ -596,13 +620,17 @@ section {
 }
 
 .contact-form {
-  background: var(--secondary-color);
-  padding: 2.5rem;
-  border-radius: 15px;
-  box-shadow: var(--card-shadow);
-  border: 1px solid #333;
-  transition: var(--transition);
-}
+            background: var(--secondary-color);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            border: 1px solid #333;
+            transition: var(--transition);
+        }
+
+        [data-theme="light"] .contact-form {
+            border: 1px solid #e0e0e0;
+        }
 
 .contact-form:hover {
   box-shadow: var(--card-hover-shadow);
@@ -619,24 +647,32 @@ section {
   position: relative;
 }
 
-.form-group label {
-  display: block;
-  margin-bottom: 0.8rem;
-  color: #f0f0f0;
-  font-weight: 500;
-}
+        .form-group label {
+            display: block;
+            margin-bottom: 0.8rem;
+            color: #f0f0f0;
+            font-weight: 500;
+        }
+        [data-theme="light"] .form-group label {
+            color: #333;
+        }
+        
+        .form-group input, 
+        .form-group textarea {
+            width: 100%;
+            padding: 1rem;
+            border-radius: 8px;
+            border: 1px solid #333;
+            background: var(--primary-color);
+            color: var(--text-color);
+            font-family: 'Poppins', sans-serif;
+            transition: var(--transition);
+        }
 
-.form-group input, 
-.form-group textarea {
-  width: 100%;
-  padding: 1rem;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: var(--primary-color);
-  color: #f0f0f0;
-  font-family: 'Poppins', sans-serif;
-  transition: var(--transition);
-}
+        [data-theme="light"] .form-group input, 
+        [data-theme="light"] .form-group textarea {
+            border: 1px solid #e0e0e0;
+        }
 
 .form-group input:focus, 
 .form-group textarea:focus {
@@ -726,17 +762,22 @@ footer::before {
 }
 
 .social-links a {
-  color: #ccc;
-  font-size: 1.8rem;
-  transition: var(--transition);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.05);
-}
+            color: #ccc;
+            font-size: 1.8rem;
+            transition: var(--transition);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        [data-theme="light"] .social-links a {
+            background: rgba(0, 0, 0, 0.05);
+            color: #666;
+        }
 
 .social-links a:hover {
   color: var(--accent-color);
