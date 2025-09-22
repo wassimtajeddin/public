@@ -168,6 +168,11 @@ document.addEventListener('DOMContentLoaded', function() {
   const body = document.body;
   const themeIcon = themeToggle?.querySelector('i');
 
+  if (themeToggle && themeIcon) {
+    const currentTheme = localStorage.getItem('theme') || 'dark';
+    body.setAttribute('data-theme', currentTheme);
+    updateThemeIcon(currentTheme);
+
     themeToggle.addEventListener('click', () => {
       const currentTheme = body.getAttribute('data-theme');
       const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
@@ -183,5 +188,6 @@ document.addEventListener('DOMContentLoaded', function() {
       } else {
         themeIcon.className = 'fas fa-sun';
       }
+    }
   }
 });
