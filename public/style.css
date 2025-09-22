@@ -552,10 +552,15 @@ section {
 }
 
 .cv-item h4 {
-  color: #f0f0f0;
-  margin-bottom: 0.5rem;
-  font-size: 1.2rem;
-}
+            color: #f0f0f0;
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        [data-theme="light"] .cv-item h4 {
+            color: #333;
+        }
+
 
 .cv-item .date {
   color: var(--accent-color);
